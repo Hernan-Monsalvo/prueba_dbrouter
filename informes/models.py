@@ -1,14 +1,7 @@
 from django.db import models
-
+from clientes.models import Cliente
 
 # Create your models here.
-class Cliente(models.Model):
-    nombre = models.CharField(max_length=64)
-    apellido = models.CharField(max_length=64)
-
-    def __str__(self):
-        return f"{self.nombre} -- {self.apellido}"
-
 class Vehiculo(models.Model):
     dominio = models.CharField(max_length=64)
     marca = models.CharField(max_length=64)

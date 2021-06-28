@@ -32,6 +32,7 @@ ALLOWED_HOSTS = []
 
 INSTALLED_APPS = [
     'informes',
+    'clientes',
     'django.contrib.admin',
     'django.contrib.auth',
     'django.contrib.contenttypes',
@@ -75,18 +76,18 @@ WSGI_APPLICATION = 'homologaciones.wsgi.application'
 # https://docs.djangoproject.com/en/3.2/ref/settings/#databases
 
 DATABASES = {
-    'default': {
+    'clientes': {
         'ENGINE': 'djongo',
         'NAME': 'db-name',
     },
-    'clientes': {
+    'default': {
         'ENGINE': 'django.db.backends.sqlite3',
         'NAME': BASE_DIR / 'db.sqlite3',
     }
 }
 
 # routers
-DATABASE_ROUTERS = ['homologaciones.routers.ClientesRouter']
+DATABASE_ROUTERS = ['homologaciones.clientes.routers.ClientesRouter']
 
 # Password validation
 # https://docs.djangoproject.com/en/3.2/ref/settings/#auth-password-validators
