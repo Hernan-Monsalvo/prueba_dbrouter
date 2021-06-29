@@ -1,18 +1,18 @@
 
-class ClientesRouter:
+class InformesRouter:
 
-    route_app_labels = { "clientes" }
+    route_app_labels = { "informes" }
 
     def db_for_read(self, model, **hints):
 
         if model._meta.app_label in self.route_app_labels:
-            return 'clientes'
+            return 'informes'
         return None
 
     def db_for_write(self, model, **hints):
 
         if model._meta.app_label in self.route_app_labels:
-            return 'clientes'
+            return 'informes'
         return None
 
     def allow_relation(self, obj1, obj2, **hints):
@@ -27,5 +27,5 @@ class ClientesRouter:
     def allow_migrate(self, db, app_label, model_name=None, **hints):
 
         if app_label in self.route_app_labels:
-            return db == 'clientes'
+            return db == 'informes'
         return None

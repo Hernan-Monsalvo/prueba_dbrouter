@@ -76,18 +76,19 @@ WSGI_APPLICATION = 'homologaciones.wsgi.application'
 # https://docs.djangoproject.com/en/3.2/ref/settings/#databases
 
 DATABASES = {
-    'clientes': {
+    'default':{},
+    'informes': {
         'ENGINE': 'djongo',
         'NAME': 'db-name',
     },
-    'default': {
+    'clientes': {
         'ENGINE': 'django.db.backends.sqlite3',
         'NAME': BASE_DIR / 'db.sqlite3',
     }
 }
 
 # routers
-DATABASE_ROUTERS = ['homologaciones.clientes.routers.ClientesRouter']
+DATABASE_ROUTERS = ['clientes.routers.ClientesRouter','informes.routers.InformesRouter']
 
 # Password validation
 # https://docs.djangoproject.com/en/3.2/ref/settings/#auth-password-validators
